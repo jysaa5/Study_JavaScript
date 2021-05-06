@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>알고리즘_003.html</title>
+  </head>
+  <body>
+    <script>
+      // 재귀함수 사례 - 2진수 변환
+      /*
+      2  11  1
+      2  5   1
+      2  2   0
+         1
+      */
+      let result = "";
+      let x = 11;
+      while (true) {
+        if (x % 2 == 0) {
+          // result = "0" + result;
+          result += "0";
+        } else {
+          // result = "1" + result;
+          result += "1";
+        }
+        x = Math.floor(x / 2);
+        if (x == 1 || x == 0) {
+          // result = String(x) + result;
+          result += String(x);
+          break;
+        }
+      }
+      // console.log(result);
+      console.log(result.split("").reverse().join(""));
+      /*
+      Math.ceil(): 소수점 올림
+      Math.floor(): 소수점 버림
+      Math.round(): 소수점 반올림
+      */
+
+      function binary(n) {
+        if (n == 1 || n == 0) {
+          return n;
+        }
+        return binary(Math.floor(n / 2)) + String(n % 2);
+      }
+      console.log(binary(11));
+      /*
+      binary(11) -> binary(5) + String(1) -> 1011
+      binary(5)  -> binary(2) + String(1) -> 101
+      binary(2)  -> binary(1) + String(0) -> 10
+      binary(1)  -> 1
+      */
+    </script>
+  </body>
+</html>

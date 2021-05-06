@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>알고리즘_004.html</title>
+  </head>
+  <body>
+    <script>
+      // 재귀함수 사례 - 문자열 뒤집기
+      let result = "";
+      let x = "JooYeonKim";
+      while (true) {
+        if (x.length == 1) {
+          // result += x;
+          result = x + result;
+          break;
+        }
+        let y = x.split("");
+        console.log(y);
+        // result += String(y.pop());
+        result = String(y.pop()) + result;
+        x = y.join("");
+        console.log(x);
+      }
+      console.log(result);
+      console.log("------------------------------");
+
+      // 재귀함수
+      function reverseString(s) {
+        if (s.length == 1) {
+          return s;
+        }
+        console.log(s.slice(0, s.length - 1));
+        return reverseString(s.slice(0, s.length - 1)) + s[s.length - 1];
+        // return s[s.length - 1] + reverseString(s.slice(0, s.length - 1));
+      }
+      console.log(reverseString("JooYeonKim"));
+    </script>
+  </body>
+</html>
