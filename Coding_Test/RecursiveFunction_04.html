@@ -34,6 +34,19 @@
         // return s[s.length - 1] + reverseString(s.slice(0, s.length - 1));
       }
       console.log(reverseString("JooYeonKim"));
+
+      /*
+      reverseString('JooYeonKim') -> s[9] + reverseString(s.slice(0, 9)) -> 'm' + reverseString('JooYeonKi') -> miKnoeYooJ
+      reverseString('JooYeonKi')  -> s[8] + reverseString(s.slice(0, 8)) -> 'i' + reverseString('JooYeonK')  -> iKnoeYooJ
+      reverseString('JooYeonK')   -> s[7] + reverseString(s.slice(0, 7)) -> 'K' + reverseString('JooYeon')   -> KnoeYooJ 
+      reverseString('JooYeon')    -> s[6] + reverseString(s.slice(0, 6)) -> 'n' + reverseString('JooYeo')    -> noeYooJ
+      reverseString('JooYeo')     -> s[5] + reverseString(s.slice(0, 5)) -> 'o' + reverseString('JooYe')     -> oeYooJ
+      reverseString('JooYe')      -> s[4] + reverseString(s.slice(0, 4)) -> 'e' + reverseString('JooY')      -> eYooJ
+      reverseString('JooY')       -> s[3] + reverseString(s.slice(0, 3)) -> 'Y' + reverseString('Joo')       -> YooJ
+      reverseString('Joo')        -> s[2] + reverseString(s.slice(0, 2)) -> 'o' + reverseString('Jo')        -> ooJ
+      reverseString('Jo')         -> s[1] + reverseString(s.slice(0, 1)) -> 'o' + reverseString('J')         -> oJ
+      reverseString('J')          -> 'J'          
+      */
     </script>
   </body>
 </html>
