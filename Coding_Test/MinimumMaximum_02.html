@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>알고리즘_008.html</title>
+  </head>
+  <body>
+    <script>
+      // 최솟값과 최댓값
+      let a = [6, 5, 4, 3, 2];
+      const reducer1 = (accumulator, currentvalue) =>
+        accumulator + currentvalue;
+      const reducer2 = (accumulator, currentvalue) =>
+        accumulator - currentvalue;
+      const reducer3 = (accumulator, currentvalue) =>
+        accumulator > currentvalue ? accumulator : currentvalue;
+      const reducer4 = (accumulator, currentvalue) =>
+        accumulator < currentvalue ? accumulator : currentvalue;
+      console.log(a.reduce(reducer1));
+      console.log(a.reduce(reducer2));
+      console.log(a.reduce(reducer3));
+      console.log(a.reduce(reducer4));
+    </script>
+  </body>
+</html>
