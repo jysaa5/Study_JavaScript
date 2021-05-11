@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>splice</title>
+    splice(): 요소를 삭제하거나 교체한다.
+  </head>
+  <body>
+    <script>
+      // splice(): 요소를 삭제하거나 교체
+      let arr = ["사과", "배", "한라봉", "바나나"];
+      console.log(arr.splice(2, 1, "레드향"));
+      console.log(arr);
+      console.log("-------------------------------");
+
+      console.log(arr.splice(1, 0, "파인애플"));
+      console.log(arr);
+    </script>
+  </body>
+</html>
