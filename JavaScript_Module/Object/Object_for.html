@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Object</title>
+  </head>
+  <body>
+    Object 순회
+    <script>
+      var obj = { id: 1, name: "test" };
+      for (var key in obj) {
+        console.log(`key: ${key}, value: ${obj[key]}`);
+      }
+
+      Object.keys(obj).forEach((key) =>
+        console.log(`key: ${key}, value: ${obj[key]}`)
+      );
+    </script>
+  </body>
+</html>
