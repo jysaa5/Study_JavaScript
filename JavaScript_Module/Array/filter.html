@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>filter</title>
+  </head>
+  <body>
+    filter(): 조건에 만족하는 항목들만 배열로 반환한다.
+    <script>
+      let score = [40, 80, 75, 90, 35, 81];
+      let message = ["홍길동", "홍홍길동", "홍", "홍홍홍길동", "길동이"];
+      console.log(score.filter((x) => x > 80));
+      console.log(message.filter((x) => x.length == 3));
+    </script>
+  </body>
+</html>

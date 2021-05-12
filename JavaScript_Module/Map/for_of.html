@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>for-of문</title>
+  </head>
+  <body>
+    <script>
+      let score = new Map();
+      score.set("국어", 90);
+      score.set("수학", 85);
+      score.set("영어", 70);
+
+      for (let [key, value] of score) {
+        console.log(`${key}: ${value}`);
+      }
+
+      for (let i of score) {
+        console.log(i);
+      }
+    </script>
+  </body>
+</html>

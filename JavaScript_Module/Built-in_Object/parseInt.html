@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>parseInt</title>
+  </head>
+  <body>
+    parseInt: 문자열을 해당 진수(10진수, 16진수 등)의 정수로 반환한다.
+    <script>
+      console.log(parseInt("100", 10));
+      console.log(parseInt("100", 16));
+      console.log(parseInt("100", 8));
+      console.log(parseInt("100", 2));
+
+      console.log(parseInt("100%abc", 2));
+      console.log(Number("100%abc"));
+    </script>
+  </body>
+</html>

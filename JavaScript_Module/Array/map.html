@@ -4,6 +4,15 @@
     <title>map</title>
   </head>
   <body>
-    <script></script>
+    map(): 배열을 순회하며 함수를 실행한 결과로 새로운 배열을 만들어 반환한다.
+    <script>
+      let arr = [1, 2, 3, 4, 5];
+      let arrTwo = ["1", "2", "3", "4", "5"];
+      function coding(x) {
+        return x ** 2;
+      }
+      console.log(arr.map(coding));
+      console.log(arr.map((x) => parseInt(x, 10)));
+    </script>
   </body>
 </html>

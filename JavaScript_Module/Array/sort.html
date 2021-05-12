@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>sort</title>
+  </head>
+  <body>
+    sort(): 배열을 정렬 후 그 배열을 반환한다.
+    <script>
+      let arr = [1, 2, 100, 10, 222, 3];
+      // sort(): 유니코드에 따라 정렬한다.
+      console.log(arr.sort());
+
+      // 배열 score를 오름차순으로 정렬하기
+      let score = [40, 80, 75, 90, 35, 81];
+
+      // 오름 차순
+      score.sort((a, b) => {
+        return a - b;
+      });
+      // [35, 40 , 75, 80, 81, 90]
+      console.log("오름 차순:", score);
+
+      // 내림 차순
+      score.sort((a, b) => {
+        return b - a;
+      });
+      // [90, 81, 80, 75, 40, 35]
+      console.log("내림 차순:", score);
+    </script>
+  </body>
+</html>

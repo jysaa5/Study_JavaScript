@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>flat</title>
+  </head>
+  <body>
+    flat(): 모든 하위 배열 요소를 지정한 깊이까지 재귀적으로 이어붙인 새로운
+    배열을 생성한다.
+    <script>
+      let matrix = [1, 2, 3, [1, 2, 3, [10, 20]]];
+      console.log(matrix.flat());
+      console.log(matrix.flat(2));
+    </script>
+  </body>
+</html>
