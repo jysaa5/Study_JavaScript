@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>match</title>
+  </head>
+  <body>
+    match(): 문자열에서 정규식과 매치되는 부분을 검색하고 배열로 반환한다.
+    <script>
+      let str = "abc abcd abcde ab cd def ABC";
+      // 전역에서 대소문자 구별하지 않고 찾겠다
+      let re = /abc/gi;
+      console.log(str.match(re));
+    </script>
+  </body>
+</html>

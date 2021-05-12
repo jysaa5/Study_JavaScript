@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Math.random</title>
+  </head>
+  <body>
+    Math.random(): 0과 1사이의 난수를 반환한다.
+    <script>
+      function getRandomInt(max) {
+        return Math.floor(Math.random() * max);
+      }
+
+      console.log(getRandomInt(3));
+      // expected output: 0, 1 or 2
+
+      console.log(getRandomInt(1));
+      // expected output: 0
+
+      console.log(Math.random());
+      // expected output: a number from 0 to <1
+    </script>
+  </body>
+</html>

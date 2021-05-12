@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Math.max</title>
+  </head>
+  <body>
+    Math.max(): 입력값으로 받은 0개 이상의 숫자 중 가장 큰 숫자를 반환한다.
+    <script>
+      Math.max(10, 20); //  20
+      Math.max(-10, -20); // -10
+      Math.max(-10, 20); //  20
+
+      console.log(Math.max(10, 20));
+      console.log(Math.max(-10, -20));
+      console.log(Math.max(-10, 20));
+
+      function getMaxOfArray(numArray) {
+        return Math.max.apply(null, numArray);
+      }
+
+      var arr1 = [1, 2, 3];
+      var max1 = arr1.reduce(function (a, b) {
+        return Math.max(a, b);
+      });
+
+      console.log(max1);
+
+      var arr2 = [1, 2, 3];
+      var max2 = Math.max(...arr2);
+      console.log(max2);
+    </script>
+  </body>
+</html>
