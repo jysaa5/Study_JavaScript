@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>spread</title>
+  </head>
+  <body>
+    <script>
+      // Spread 적용 전
+      const slime1 = {
+        name: "슬라임",
+      };
+      const cuteSlime1 = {
+        name: "슬라임",
+        attribute: "cute",
+      };
+      const purpleCuteSlime1 = {
+        name: "슬라임",
+        attribute: "cute",
+        color: "purple",
+      };
+
+      console.log(slime1);
+      console.log(cuteSlime1);
+      console.log(purpleCuteSlime1);
+
+      console.log("----------------------------");
+
+      // Spread 적용 후
+      const slime2 = {
+        name: "슬라임",
+      };
+      const cuteSlime2 = {
+        ...slime2,
+        attribute: "cute",
+      };
+      const purpleCuteSlime2 = {
+        ...cuteSlime2,
+        color: "purple",
+      };
+      console.log(slime2);
+      console.log(cuteSlime2);
+      console.log(purpleCuteSlime2);
+    </script>
+  </body>
+</html>

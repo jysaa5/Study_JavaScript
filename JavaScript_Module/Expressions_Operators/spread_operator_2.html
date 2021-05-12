@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>spread</title>
+  </head>
+  <body>
+    <script>
+      const animals = ["개", "고양이", "참새"];
+      const anotherAnimals = [...animals];
+      console.log(animals);
+      console.log(anotherAnimals);
+
+      console.log("------------------------------------");
+
+      // spread 여러 번 사용
+      const numbers = [1, 2, 3, 4, 5];
+      const spreadNumbers = [...numbers, 1000, ...numbers];
+      console.log(spreadNumbers);
+    </script>
+  </body>
+</html>

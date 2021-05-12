@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>rest</title>
+  </head>
+  <body>
+    <script>
+      // 객체
+      const purpleCuteSlime = {
+        name: "슬라임",
+        attribute: "cute",
+        color: "purple",
+      };
+
+      const { color, ...cuteSlime } = purpleCuteSlime;
+      console.log(color);
+      console.log(cuteSlime);
+
+      const { attribute, ...slime } = cuteSlime;
+      console.log(attribute);
+      console.log(slime);
+
+      console.log("---------------------------");
+
+      // 배열
+      const numbers = [0, 1, 2, 3, 4, 5, 6];
+      const [one, ...rest] = numbers;
+      console.log(one);
+      console.log(rest);
+
+      console.log("---------------------------");
+
+      // 함수
+      function sum1(a, b, c, d, e, f, g) {
+        let sum = 0;
+        if (a) sum += a;
+        if (b) sum += b;
+        if (c) sum += c;
+        if (d) sum += d;
+        if (e) sum += e;
+        if (f) sum += f;
+        if (g) sum += g;
+        return sum;
+      }
+
+      const result1 = sum1(1, 2, 3, 4, 5, 6);
+      console.log(result1);
+
+      console.log("---------------------------");
+
+      function sum2(...rest) {
+        return rest.reduce((acc, current) => acc + current, 0);
+      }
+
+      const result2 = sum2(1, 2, 3, 4, 5, 6);
+      console.log(result2); // 21
+    </script>
+  </body>
+</html>

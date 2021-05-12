@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>replace</title>
+  </head>
+  <body>
+    replace(): 특정 패턴에 일치하는 문자열을 교체할 수 있다.
+    <script>
+      let str = "abc abcd abcde ab cd def";
+      console.log(str.replace("abc", "!"));
+      console.log(str.replace(/abc/g, "!"));
+      console.log(str.replace(/ /g, "-"));
+    </script>
+  </body>
+</html>
