@@ -1,4 +1,5 @@
 // 문제: 2935, 소음
+// 문제 원인: 일반적인 사칙연산을 하면 범위가 커져서 지수 표현이 된다.
 
 const readline = require("readline");
 const rl = readline.createInterface({
