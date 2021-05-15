@@ -11,6 +11,26 @@
       // [1, 10, 100, 2, 222, 3]
       console.log(arr.sort());
 
+      // 문자열 배열 정렬 - 오름차순
+      const months1 = ["March", "Jan", "Feb", "Dec"];
+      months1.sort();
+
+      // ["Dec", "Feb", "Jan", "March"]
+      console.log("오름 차순:", months1);
+
+      // 문자열 배열 정렬 - 내림차순
+      const months2 = ["March", "Jan", "Feb", "Dec"];
+      months2.sort(function (a, b) {
+        if (a < b) return 1;
+        if (a > b) return -1;
+        if (a === b) return 0;
+      });
+
+      // ["March", "Jan", "Feb", "Dec"]
+      console.log("내림 차순:", months2);
+
+      console.log("-------------------------------------");
+
       // 배열 score를 오름차순으로 정렬하기
       let score = [40, 80, 75, 90, 35, 81];
 

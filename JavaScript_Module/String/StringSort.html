@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>String 정렬</title>
+  </head>
+  <body>
+    String 정렬 (오름차순, 내림차순)
+    <script>
+      // 문자열 오름차순 정렬
+      function ascendingOrder(s) {
+        return s.split("").sort().join("");
+      }
+
+      // 문자열 내림차순 정렬
+      function descendingOrder(s) {
+        return s.split("").sort().reverse().join("");
+      }
+
+      console.log(ascendingOrder("zdegbsaohublsad"));
+
+      console.log(descendingOrder("zdegbsaohublsad"));
+    </script>
+  </body>
+</html>
