@@ -6,14 +6,31 @@
 
 function getMoney(dices) {
     // 정렬
-    const nums = new Set([])
+    dices.sort()
+    const nums = new Set([...dices])
+    // 4개
     if (nums.size === 1) {
-        return 50000 + (nums[0] * 5000)
+        return ((dices[0] * 5000) + 50000)
     }
-
+    // 3개, 2쌍 일때
     if (nums.size === 2) {
-
+        // 3개가 같을 때
+        if (dices[1] === dices[2]) {
+            return ((dices[1] * 1000) + 10000)
+        }
+        // 2개씩 쌍일때
+        return ((dices[1] * 500) + (dices[2] * 500) + 2000)
     }
+    // 2개
+    if (nums.size === 3) {
+        for (var i = 0; i < dices.length; i++) {
+            if (dices[i] === dices[i + 1]) {
+                return ((dices[i] * 100) + 1000)
+            }
+        }
+    }
+    // 다 다를때
+    return dices[dices.length - 1] * 100
 }
 
 
@@ -30,42 +47,8 @@ rl.on("line", function (line) {
     let n = parseInt(input[0])
     let result = [];
     for (var i = 0; i < n; i++) {
-        let nums = [0, 0, 0, 0, 0, 0, 0, 0];
-        let dices = input[i + 1].split(" ");
-        for (var d of dices) {
-            nums[parseInt(d)]++;
-        }
-        let max = Math.max(...nums)
-
-        // 4개 일때
-        if (max === 4) {
-            result.push(50000 + (nums.indexOf(max)) * 5000)
-            // 3개 일때
-        } else if (max === 3) {
-            result.push(10000 + nums.indexOf(max) * 1000)
-            // 2개 일때
-        } else if (max === 2) {
-            var arr = [];
-            nums.reduce((acc, curr, i) => {
-                if (curr === 2) {
-                    arr.push(i)
-                }
-            }, 0)
-            if (arr.length > 1) {
-                result.push(2000 + parseInt(arr[0]) * 500 + parseInt(arr[1]) * 500)
-            } else {
-                result.push(1000 + parseInt(arr[0]) * 100)
-            }
-        } else {
-            let i = nums.length - 1
-            while (true) {
-                if (nums.pop() === 1) {
-                    result.push(i * 100)
-                    break;
-                }
-                i--;
-            }
-        }
+        let dices = input[i + 1].split(" ").map((e) => parseInt(e));
+        result.push(getMoney(dices))
     }
     console.log(Math.max(...result))
     process.exit();
