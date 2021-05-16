@@ -1,5 +1,6 @@
 // 문제: 1000, A+B
 
+// main 입출력
 const readline = require("readline");
 const rl = readline.createInterface({
   input: process.stdin,
