@@ -8,12 +8,25 @@
     <script>
       // splice(): 요소를 삭제하거나 교체
       let arr = ["사과", "배", "한라봉", "바나나"];
+      console.log("현재 배열 길이: ", arr.length);
+      console.log("-------------------------------");
+
       console.log(arr.splice(2, 1, "레드향"));
       console.log(arr);
+      console.log("현재 배열 길이: ", arr.length);
+      console.log("-------------------------------");
+
+      console.log(arr.splice(2, 1));
+      console.log(arr);
+      console.log("현재 배열 길이: ", arr.length);
+      for (var i in arr) {
+        console.log(i);
+      }
       console.log("-------------------------------");
 
       console.log(arr.splice(1, 0, "파인애플"));
       console.log(arr);
+      console.log("현재 배열 길이: ", arr.length);
     </script>
   </body>
 </html>
