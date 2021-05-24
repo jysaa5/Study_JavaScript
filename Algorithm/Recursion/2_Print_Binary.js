@@ -1,7 +1,5 @@
 // 이진수 출력 (재귀)
 
-
-
 function solution(n) {
     let answer = '';
 
