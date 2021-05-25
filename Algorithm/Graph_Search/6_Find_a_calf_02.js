@@ -3,7 +3,7 @@
 // 이미 큐에 들어갔던 것은 체크 배열을 만들어서 체크한다.
 // Level를 배열 말고 방법으로 구한다.
 
-
+// s: 현수의 위치, e: 송아지의 위치
 function solution(s, e) {
     let answer = 0;
     let ch = Array.from({
