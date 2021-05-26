@@ -5,6 +5,13 @@ function solution(a, b, c) {
     let answer = '';
     let arr = [a, b, c];
     arr.sort((a, b) => a - b)
+
+    if (arr[2] < arr[1] + arr[0]) {
+        console.log('YES');
+    } else {
+        console.log('NO')
+    }
+    return answer
 }
 
 console.log(solution(6, 7, 11))
