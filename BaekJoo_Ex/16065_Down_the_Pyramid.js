@@ -11,9 +11,8 @@ rl.on("line", function (line) {
     input.push(line);
 }).on("close", function () {
     let n = parseInt(input[0]);
-    let arr = Array.from({
-        length: n + 1
-    }, () => 0);
+    let arr = [];
+    arr[0] = 0;
     for (let i = 1; i <= n; i++) {
         arr[i] = parseInt(input[1].split(" ")[i - 1]);
     }
@@ -22,7 +21,7 @@ rl.on("line", function (line) {
     let high = 1e18;
     let x = 0;
 
-    for (let j = 1; j <= n; j++) {
+    for (let j = 0; j <= n; j++) {
         x = arr[j] - x;
         if (Math.floor(j % 2) === 1) {
             high = Math.min(high, x);
@@ -31,7 +30,7 @@ rl.on("line", function (line) {
         }
     }
 
-    if (low > high) {
+    if ((low > high) || (low < 0) || (high < 0)) {
         console.log(0);
     } else {
         console.log(high - low + 1)
