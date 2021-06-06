@@ -9,22 +9,22 @@ OX 문제는 맞거나 틀린 두 경우의 답을 가지는 문제를 말한다
 예를 들어, 아래와 같이 10 개의 OX 문제에서 답이 맞은 문제의 경우에는 1 로 표시하고, 틀린 경우에는 0 으로 표시하였을 때, 점수 계산은 아래 표와 같이 계산되어, 총 점수는 1 + 1 + 2 + 3 + 1 + 2 = 10 점이다.
 */
 
-function solution(n, x1, x2, x3, x4, x5, x6, x7, x8, x9, x10) {
-    let num = n;
-    let arr = [x1, x2, x3, x4, x5, x6, x7, x8, x9, x10];
-    let score = 0;
-    let cnt = 0;
 
+function solution(arr) {
+    let answer = 0;
+    let cnt = 0;
     for (let x of arr) {
         if (x === 1) {
             cnt++;
-            score += cnt;
+            answer += cnt;
         } else {
             cnt = 0;
         }
     }
-    return score;
+    return answer;
 }
 
 
-console.log(solution(10, 1, 0, 1, 1, 1, 0, 0, 1, 1, 0));
+let arr = [1, 0, 1, 1, 1, 0, 0, 1, 1, 0];
+
+console.log(solution(arr));
