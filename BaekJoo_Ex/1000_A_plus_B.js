@@ -1,3 +1,4 @@
+'use strict';
 // 문제: 1000, A+B
 
 // main 입출력
