@@ -5,32 +5,30 @@ N(1 <= N <= 100) 명의 학생의 국어점수가 입력되면 각 학생의 등
 
 
 function solution(arr) {
-    let n = 0;
+    let tmp = -1;
+    let rank = 1;
     let cnt = 1;
     let nums = arr.slice();
-    let scores = new Map();
     let answer = [];
     nums.sort((a, b) => b - a);
     console.log(nums);
     for (let i = 0; i < nums.length; i++) {
-        if (!scores.has(nums[i] + "")) {
-            console.log(scores.has(nums[i] + ""))
-            n++;
-            console.log('n1:', n)
-            scores.set(nums[i] + "", n + cnt);
-            cnt = 0;
-        } else if (scores.has(nums[i] + "")) {
-            console.log(scores.has(nums[i] + ""))
-            cnt++;
-            console.log('n2:', n)
-            console.log(cnt)
+        if (tmp < 0) {
+            tmp = nums[i];
+        } else {
+            if (tmp !== nums[i]) {
+                if (cnt > 1) {
+                    answer.push(rank + cnt);
+                    rank += cnt
+                } else {
+                    answer.push(rank);
+                }
+                rank++;
+            } else {
+                cnt++;
+                answer.push(rank);
+            }
         }
-    }
-
-    console.log(scores)
-
-    for (let s of arr) {
-        answer.push(scores.get(s + ""));
     }
 
     return answer;
