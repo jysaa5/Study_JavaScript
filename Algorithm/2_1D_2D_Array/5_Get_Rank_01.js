@@ -24,7 +24,7 @@ function solution(arr) {
                     answer.push(rank);
                 }
                 rank++;
-            } else {
+            } else if (tmp === nums[i]) {
                 cnt++;
                 answer.push(rank);
             }
