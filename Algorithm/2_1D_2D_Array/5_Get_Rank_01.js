@@ -15,19 +15,24 @@ function solution(arr) {
     for (let i = 0; i < nums.length; i++) {
         if (tmp < 0) {
             tmp = nums[i];
+            answer.push(rank);
+            rank++;
         } else {
             if (tmp !== nums[i]) {
                 if (cnt > 1) {
                     answer.push(rank + cnt);
                     rank += cnt
+                    cnt = 1;
                 } else {
                     answer.push(rank);
                 }
                 rank++;
             } else if (tmp === nums[i]) {
                 cnt++;
+                rank--;
                 answer.push(rank);
             }
+            tmp = nums[i];
         }
     }
 
