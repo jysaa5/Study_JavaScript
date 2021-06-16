@@ -3,7 +3,7 @@
 N(1 <= N <= 100) 명의 학생의 국어점수가 입력되면 각 학생의 등수를 입력된 순서대로 출력하는 프로그램을 작성하세요.
 */
 
-
+// solution 1
 function solution(arr) {
     let tmp = -1;
     let rank = 1;
