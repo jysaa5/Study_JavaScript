@@ -37,21 +37,21 @@ function solution(num, array) {
         console.log('열의 합>>>', columnMax);
     }
 
+    let numsArr2 = [];
     // 두 대각선의 합 (첫 번째 대각선)
     for (let l = 0; l < nums.length; l++) {
-        let numsArr2 = [];
         numsArr2.push(nums[l][l]);
-        diagonalMax = Math.max(diagonalMax, getSumNums(numsArr2));
-        console.log('대각선의 합1>>>', diagonalMax);
     }
+    diagonalMax = Math.max(diagonalMax, getSumNums(numsArr2));
+    console.log('대각선의 합1>>>', diagonalMax);
 
+    let numsArr3 = [];
     // 두 대각선의 합 (두 번째 대각선)
     for (let m = 0; m < nums.length; m++) {
-        let numsArr3 = [];
         numsArr3.push(nums[m][nums.length - 1 - m]);
-        diagonalMax = Math.max(diagonalMax, getSumNums(numsArr3));
-        console.log('대각선의 합2>>>', diagonalMax);
     }
+    diagonalMax = Math.max(diagonalMax, getSumNums(numsArr3));
+    console.log('대각선의 합2>>>', diagonalMax);
 
     result = Math.max(rowsMax, columnMax, diagonalMax);
     return result;
