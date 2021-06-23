@@ -5,6 +5,7 @@ N개의 자연수가 입력되면 각 자연수의 자릿수의 합을 구하고
 만약 235 와 1234 가 동시에 답이 될 수 있다면 1234 를 답으로 출력해야 합니다.
 */
 
+// solution 1
 function solution(n, arr) {
     let answer, max = Number.MIN_SAFE_INTEGER;
     for (let x of arr) {
