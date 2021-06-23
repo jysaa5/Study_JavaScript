@@ -8,14 +8,23 @@ N개의 자연수가 입력되면 각 자연수의 자릿수의 합을 구하고
 // solution 2
 
 function getSumOfNum(num) {
-    let n = String(num);
-
+    let n = String(num).split("");
+    let sum = 0;
+    for (let a of n) {
+        sum += Number(a);
+    }
+    return sum;
 }
 
 function solution(arr) {
     let numArr = arr.slice();
-
-
+    numArr = numArr.sort((a, b) => b - a);
+    let numsSum = [];
+    for (let num of numArr) {
+        numsSum.push(getSumOfNum(num));
+    }
+    let max = Math.max(...numsSum);
+    return numArr[numsSum.indexOf(max)];
 }
 
 let nums = [128, 460, 603, 40, 521, 137, 123];
