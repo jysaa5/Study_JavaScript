@@ -6,3 +6,11 @@ N개의 자연수가 입력되면 각 자연수를 뒤집은 후 그 뒤집은 �
 단 910를 뒤집으면 19로 숫자화 해야 한다. 첫 자리부터의 연속된 0은 무시한다.
 */
 
+function checkPrimeNumber() {
+
+}
+
+
+function solution() {
+
+}
