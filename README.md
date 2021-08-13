@@ -1,6 +1,6 @@
 # JavaScript
 ### JavaScript Study
-
++ ES6
 --------------------------
 ### Algorithm
 + Recursive Function (재귀 함수)
