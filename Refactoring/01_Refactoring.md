@@ -1,15 +1,4 @@
-# JavaScript
-### JavaScript Study
-+ [ES6](https://developer.mozilla.org/ko/docs/Web/JavaScript)
-+ [axios](https://github.com/axios/axios)
---------------------------
-### Algorithm
-+ Recursive Function (재귀 함수)
-  +  Fibonacci Number (피보나치 수열)
-  +  Minimum & Maximum (최소값 & 최대값)
-+ Sort (정렬)
-  + Selection Sort (선택 정렬)
-  + Insertion Sort (삽입 정렬)
-  + Merge Sort (합병 정렬, 병합 정렬)
-  + Quick Sort (퀵 정렬)
----------------------------
+# 01 Refactoring - Example
+### 기능 추가 및 수정
+- 수백 줄짜리 코드를 수정할 때면 먼저 프로그램의 작동 방식을 더 쉽게 파악할 수 있도록 코드를 여러 함수와 프로그램 요소로 재구성한다.
+- 프로그램의 구조가 빈약하다면 대체로 구조부터 바로잡은 뒤에 기능을 수정하는 편이 작업하기가 훨씬 수월하다.
