@@ -12,7 +12,7 @@
 + Recursive Function (재귀 함수)
   +  Fibonacci Number (피보나치 수열)
   +  Minimum & Maximum (최소값 & 최대값)
- + Grap(그래프)
++ Grap(그래프)
   + BFS
   + DFS 
 ---------------------------
