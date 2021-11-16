@@ -41,6 +41,10 @@ const a;
 ```
 // 변수 a 선언
 const a;
+
 // 변수 a에 데이터 
 a = 'JooYeon Kim';
+
+// 변수 선언과 할당을 한 문장으로 표현
+const a = 'JooYeon Kim';
 ```
