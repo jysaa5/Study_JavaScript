@@ -1,21 +1,27 @@
 function timeConversion(s) {
   let result = "";
   let time = checkAMPM(s);
+  let arr = s.slice(0, s.indexOf(time)).split(":");
   if (time === "PM") {
-    let arr = s.slice(0, s.indexOf("PM")).split(":");
-    let hour = Number.parseInt(arr[0]) + 12;
-    if (hour === 24) {
-      hour = "00";
+    let hour = Number.parseInt(arr[0]);
+    if (hour !== 12) {
+      hour = hour + 12;
     }
     result = hour + ":" + arr[1] + ":" + arr[2];
-  } else {
-    result = s.slice(0, s.indexOf("AM"));
+  } else if (time === "AM") {
+    let hour = Number.parseInt(arr[0]);
+    if (hour === 12) {
+      hour = "00";
+      result = hour + ":" + arr[1] + ":" + arr[2];
+    } else {
+      result = s.slice(0, s.indexOf("AM"));
+    }
   }
   return result;
 }
 
 function checkAMPM(time) {
-  if (time.indexOf("PM")) {
+  if (time.indexOf("PM") >= 0) {
     return "PM";
   } else {
     return "AM";
@@ -23,3 +29,4 @@ function checkAMPM(time) {
 }
 
 console.log(timeConversion("07:05:45PM"));
+console.log(timeConversion("07:05:45AM"));
