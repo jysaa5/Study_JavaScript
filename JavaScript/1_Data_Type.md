@@ -59,3 +59,4 @@ const a = 'JooYeon Kim';
 - 변경 가능성: 변수(variable)와 상수(constant)를 구분하는 성질.
 - 변수 영역: 변수와 상수를 구분 짓는 변경 가능성의 대상.
 - 데이터 영역: 불변성 여부를 구분할 때의 변경 가능성의 대상.
+- 불변값: 기본형 데이터인 숫자, 문자열, boolean, null, undefined, Symbol
