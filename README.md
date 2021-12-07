@@ -4,6 +4,10 @@
 + [axios](https://github.com/axios/axios)
 --------------------------
 ### Algorithm
++ 기초
+  + 세 수 중 최솟값
+  + 삼각형 판별하기
+
 + Sort (정렬)
   + Selection Sort (선택 정렬)
   + Insertion Sort (삽입 정렬)
