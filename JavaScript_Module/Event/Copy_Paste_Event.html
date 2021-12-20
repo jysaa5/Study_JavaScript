@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<head>
+
+</head>
+<body>
+    <div class="main" onkeydown="preventCopy()" tabindex="0" oncontextmenu="preventCopy()" onselectstart="preventCopy()" ondragstart="preventCopy()"
+    onkeyup="preventCopy()" onkeypress="preventCopy()">
+        <h1>oncontextmenu</h1>
+        <h1></h1>
+    </div>
+    <script>
+        const preventCopy = () => {
+            console.log(event);
+            event.preventDefault();
+        }
+    </script>
+</body>
+</html>
+<style>
+.main{
+    width: 500px; 
+    height: 500px;
+    border-style: solid;
+}
+</style>
