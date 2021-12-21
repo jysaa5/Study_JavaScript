@@ -1,21 +1,21 @@
-// 이진수 출력 (재귀)
+// 2. 이진수 출력 (재귀)
 
 function solution(n) {
-    let answer = '';
+  let answer = "";
 
-    function DFS(n) {
-        if (n === 0) {
-            return
-        } else {
-            DFS(parseInt(n / 2))
-            console.log(n % 2);
-            answer += String(n % 2);
-        }
+  function DFS(n) {
+    if (n === 0) {
+      return;
+    } else {
+      DFS(parseInt(n / 2));
+      console.log(n % 2); // 스택 상댄부터 처리 된다.
+      answer += String(n % 2);
     }
+  }
 
-    DFS(n)
+  DFS(n);
 
-    return answer;
+  return answer;
 }
 
-console.log(solution(11))
+console.log(solution(11));

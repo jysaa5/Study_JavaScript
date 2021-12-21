@@ -14,6 +14,7 @@ function solution(m, arr) {
   return answer;
 }
 
+// 문제 점수, 문 푸는데 걸리는 시간
 let arr = [
   [10, 5],
   [25, 12],
