@@ -14,10 +14,10 @@ const getPermutations = function (arr, selectNumber) {
     const permutations = getPermutations(rest, selectNumber - 1);
     // 돌아온 순열에 떼 놓은 (fixed) 값 붙이기
     const attached = permutations.map((el) => [fixed, ...el]);
-    // 배열 sparead syntax로 모든 다 push
+    // 배열 sparead syntax로 모두 다 push
     results.push(...attached);
   });
-  return results;
+  return results; // 결과 담긴 results return
 };
 
 let numberArr = [1, 2, 3, 4];
