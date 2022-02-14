@@ -9,6 +9,14 @@ export default function () {
         // reverse the name: JavaScript -> tpircSavaJ
         path.node.name = name.split("").reverse().join("");
       },
+      // https://github.com/babel/babel/blob/master/packages/babel-plugin-transform-block-scoping/src/index.js#L26
+      VariableDeclaration(path) {
+        console.log("VariableDeclaration() kind:", path.node.kind); // const
+
+        if (path.node.kind === "const") {
+          path.node.kind = "var";
+        }
+      },
     },
   };
 }
