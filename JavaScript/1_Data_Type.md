@@ -6,7 +6,7 @@
 - 참조형: Reference type
   - 객체(object)
     - 배열(Array), 함수(Function), 날짜(Date), 정규표현식(RegExp), Map, WeakMap, Set, WeakSet 등
-- 구분 기준: 복제하는 
+- 구분 기준: 복제 대상
 <br/>
 
 ### 2. 기본형, 참조형의 복제
