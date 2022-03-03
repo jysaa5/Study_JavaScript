@@ -9,6 +9,8 @@
 - 구분 기준: 복제 대상
 <br/>
 
+[데이터타입의 종류](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FAFWT1%2FbtruXTZdl7P%2F4rZkRAZWxs1wnY3gyc01h1%2Fimg.jpg)
+
 ### 2. 기본형, 참조형의 복제
 - 기본형: 값이 담긴 주솟값을 바로 복재한다.
 - 참조형: 값이 담긴 주솟값들로 이루어진 묶음을 가리키는 주솟값을 복제한다는 점이 다르다.
