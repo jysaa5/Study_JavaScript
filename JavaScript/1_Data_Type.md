@@ -92,3 +92,6 @@ let obj1 = {
     a: 1,
     b: 'bbb'
 }
+```
+
+![참조형 데이터의 ](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcC28jk%2Fbtru8whJnxI%2FQaPzJqbX2xYfVk2FV5n9p0%2Fimg.jpg)
