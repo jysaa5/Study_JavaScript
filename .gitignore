@@ -19,4 +19,5 @@
 ### MAC ###
 *.DS_Store
 
-*/node_modules
+## node modules
+node_modules
