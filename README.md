@@ -2,6 +2,7 @@
 ### JavaScript Study
 + [ES6](https://developer.mozilla.org/ko/docs/Web/JavaScript)
 + [axios](https://github.com/axios/axios)
++ [anime.js](https://animejs.com/)
 
 --------------------------
 ### JavaScript Module
