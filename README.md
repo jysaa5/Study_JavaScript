@@ -3,6 +3,7 @@
 + [ES6](https://developer.mozilla.org/ko/docs/Web/JavaScript)
 + [axios](https://github.com/axios/axios)
 + [anime.js](https://animejs.com/)
++ [Choices](https://choices-js.github.io/Choices/)
 
 --------------------------
 ### JavaScript Module
