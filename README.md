@@ -7,7 +7,7 @@
 + [anime.js](https://animejs.com/)
 + [Choices](https://choices-js.github.io/Choices/)
 
-## Algorithm
+## :hourglass_flowing_sand: Algorithm
 + 기초 
   + 세 수 중 최소값
   + 삼각형 판별하기
