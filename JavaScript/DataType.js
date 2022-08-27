@@ -9,18 +9,24 @@ const c = 5;
 b = 7;
 
 // 참조형 데이터의 할당 & 재할당
-const obj1 = {
+const obj = {
   a: 1,
   b: "bbb",
 };
 
-obj1.a = 2;
+obj.a = 2;
 
 // 중첩 객체
-const obj = {
+const obj1 = {
   x: 3,
   arr: [3, 4, 5],
 };
 
 // 재할당
 obj.arr = "str";
+
+// 변수 복사
+const a1 = 10;
+const b1 = a1;
+const obj2 = { c: 10, d: "ddd" };
+const obj3 = obj2;
