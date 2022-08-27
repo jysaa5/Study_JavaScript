@@ -98,7 +98,7 @@ let obj1 = {
 }
 ```
 
-![참조형 데이터의 ](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcC28jk%2Fbtru8whJnxI%2FQaPzJqbX2xYfVk2FV5n9p0%2Fimg.jpg)
+![참조형 데이터의 ](https://github.com/jysaa5/Study_JavaScript/blob/master/JavaScript/core_javascript_2.jpeg?raw=true)
 - (1)컴퓨터는 우선 변수 영역의 빈 공간(@1002)을 확보하고, 그 주소의 이름을 obj1로 지정한다.
 - (2)임의의 데이터 저장 공간(@5001)에 데이터를 저장하려고 보니 여러 개의 프로퍼티로 이뤄진 데이터 그룹이다. 이 그룹 내부의 프로퍼티을 저장하기 위해 별도의 변수 영역을 마련하고 그 영역의 주소(@7103 ~ ?)를 @5001에 저장한다.
 - (3)@7103 및 @7104에 각각 a와 b라는 프로퍼티 이름을 지정한다.
