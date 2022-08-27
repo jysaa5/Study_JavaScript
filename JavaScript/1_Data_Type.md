@@ -119,4 +119,7 @@ const obj1 = {
 
 obj1.a = 2; // 주목
 ```
-![참조형 데이터의 프로퍼티 재할당]()
+![참조형 데이터의 프로퍼티 재할당](https://github.com/jysaa5/Study_JavaScript/blob/master/JavaScript/core_javascript_3.jpeg?raw=true)
+- (1)`obj1`의 `a` 프로퍼티에 숫자 `2`를 할당하려고 한다.
+- (2) 데이터 영역에서 숫자 `2`를 검색한다.
+- (3) 검색 결과가 없으므로 빈 공간인 `@5005`에 저장하고 이 주소를 `@7103`에 저장한다.
