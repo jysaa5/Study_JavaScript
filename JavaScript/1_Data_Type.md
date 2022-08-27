@@ -73,6 +73,7 @@ const a = 'JooYeon Kim';
 <br/>
 
 ```
+// 
 let a = 'abc';
 a = a + 'def';
 let b = 5;
