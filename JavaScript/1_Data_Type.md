@@ -73,7 +73,7 @@ const a = 'JooYeon Kim';
 <br/>
 
 ```
-// 
+// 불변성
 let a = 'abc';
 a = a + 'def';
 let b = 5;
