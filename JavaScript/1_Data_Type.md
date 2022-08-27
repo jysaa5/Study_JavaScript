@@ -9,7 +9,7 @@
 - 구분 기준: 복제 대상
 <br/>
 
-![데이터 타입의 종류](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FAFWT1%2FbtruXTZdl7P%2F4rZkRAZWxs1wnY3gyc01h1%2Fimg.jpg)
+![데이터 타입의 종류](https://github.com/jysaa5/Study_JavaScript/blob/master/JavaScript/core_javascript_1.jpeg?raw=true)
 
 ### 2. 기본형, 참조형의 복제
 - 기본형: 값이 담긴 주솟값을 바로 복재한다.
