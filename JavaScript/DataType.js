@@ -30,3 +30,12 @@ const a1 = 10;
 const b1 = a1;
 const obj2 = { c: 10, d: "ddd" };
 const obj3 = obj2;
+
+// 변수 복사 이후 값 변경 결과 비교
+const a2 = 10;
+const b2 = a2;
+const obj4 = { c: 10, d: "ddd" };
+const obj5 = obj4;
+
+b2 = 15;
+obj4.c = 20;
