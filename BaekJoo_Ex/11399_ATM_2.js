@@ -1,4 +1,4 @@
-// 문제: 11399 ATM
+// 11399 ATM
 
 let fs = require("fs");
 let input = fs.readFileSync("/dev/stdin").toString().split("\n");
