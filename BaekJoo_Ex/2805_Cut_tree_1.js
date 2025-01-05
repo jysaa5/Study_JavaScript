@@ -24,28 +24,28 @@ rl.on("line", function (line) {
 }).on("close", function () {
     tree = input[0].split(' ').map(Number)[0];
     height = input[0].split(" ").map(Number)[1];
-  nums = input[1]
-    .split(" ")
+    nums = input[1].split(" ")
     .map(Number)
     .sort((a, b) => a - b);
 
-  start = 1;
+    start = 0;
     end = nums[tree - 1];
-
-  while (start <= end) {
+    
+    while (start <= end) {
       mid = Math.floor((start + end) / 2);
-    let count = 0;
-    for (let b of nums) {
-      count += (mid >= b) ? 0 : b - mid;
-    }
+        let count = 0;
+        
+        for (let b of nums) {
+        count += (mid >= b) ? 0 : b - mid;
+        }
 
-      if (count >= height) {
-         result = mid;
-      start = mid + 1;
-    } else {
-      end = mid - 1;
+        if (count >= height) {
+            result = mid;
+            start = mid + 1;
+        } else {
+            end = mid - 1;
+        }
     }
-  }
 
   console.log(result);
 
