@@ -34,5 +34,6 @@ rl.on('line', function (line) {
     rl.close();
 }).on("close", function () {
     dfs(0);
-    console.log(cnt)
+    console.log(cnt);
+    process.exit();
 })
