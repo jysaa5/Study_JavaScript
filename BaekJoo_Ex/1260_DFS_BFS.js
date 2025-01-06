@@ -48,59 +48,57 @@ const rl = readline.createInterface({
 	output: process.stdout,
 });
 let input = [];
-rl
-	.on('line', function (line) {
-		input.push(line);
-	})
-	.on('close', function () {
-		let node = parseInt(input[0].split(' ')[0]);
-		let edge = parseInt(input[0].split(' ')[1]);
-		let v = parseInt(input[0].split(' ')[2]);
-		let arr = [];
-		for (let i = 0; i < edge; i++) {
-			arr.push(input[i + 1].split(' ').map((i) => parseInt(i)));
-		}
+rl.on('line', function (line) {
+	input.push(line);
+}).on('close', function () {
+	let node = parseInt(input[0].split(' ')[0]);
+	let edge = parseInt(input[0].split(' ')[1]);
+	let v = parseInt(input[0].split(' ')[2]);
+	let arr = [];
+	for (let i = 0; i < edge; i++) {
+		arr.push(input[i + 1].split(' ').map((i) => parseInt(i)));
+	}
 
-		arr.sort(function (a, b) {
-			if (a[1] > b[1]) return 1;
-			if (a[1] === b[1]) return 0;
-			if (a[1] < b[1]) return -1;
-		});
-		// 인접행렬 (2차원 배열)
-		graph = Array.from(Array(node + 1), () => Array(node + 1).fill(0));
-		// 체크 배열 (1차원 배열)
-		ch_dfs = Array.from(
-			{
-				length: node + 1,
-			},
-			() => 0,
-		);
-
-		ch_bfs = Array.from(
-			{
-				length: node + 1,
-			},
-			() => 0,
-		);
-
-		for (let [a, b] of arr) {
-			graph[a][b] = 1;
-			graph[b][a] = 1;
-		}
-
-		// console.log(graph)
-
-		dfs(v, node);
-		bfs(v, node);
-		let str1 = '';
-		for (let dfs of dfs_path) {
-			str1 += dfs + ' ';
-		}
-		let str2 = '';
-		for (let bfs of bfs_path) {
-			str2 += bfs + ' ';
-		}
-		console.log(str1);
-		console.log(str2);
-		process.exit();
+	arr.sort(function (a, b) {
+		if (a[1] > b[1]) return 1;
+		if (a[1] === b[1]) return 0;
+		if (a[1] < b[1]) return -1;
 	});
+	// 인접행렬 (2차원 배열)
+	graph = Array.from(Array(node + 1), () => Array(node + 1).fill(0));
+	// 체크 배열 (1차원 배열)
+	ch_dfs = Array.from(
+		{
+			length: node + 1,
+		},
+		() => 0,
+	);
+
+	ch_bfs = Array.from(
+		{
+			length: node + 1,
+		},
+		() => 0,
+	);
+
+	for (let [a, b] of arr) {
+		graph[a][b] = 1;
+		graph[b][a] = 1;
+	}
+
+	// console.log(graph)
+
+	dfs(v, node);
+	bfs(v, node);
+	let str1 = '';
+	for (let dfs of dfs_path) {
+		str1 += dfs + ' ';
+	}
+	let str2 = '';
+	for (let bfs of bfs_path) {
+		str2 += bfs + ' ';
+	}
+	console.log(str1);
+	console.log(str2);
+	process.exit();
+});

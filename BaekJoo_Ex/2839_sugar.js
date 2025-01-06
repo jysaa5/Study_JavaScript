@@ -20,12 +20,10 @@ const getNumberOfPacks = (n) => {
 	}
 };
 
-rl
-	.on('line', function (line) {
-		input.push(line);
-		rl.close();
-	})
-	.on('close', function () {
-		console.log(getNumberOfPacks(Number(input[0])));
-		process.exit();
-	});
+rl.on('line', function (line) {
+	input.push(line);
+	rl.close();
+}).on('close', function () {
+	console.log(getNumberOfPacks(Number(input[0])));
+	process.exit();
+});

@@ -47,14 +47,12 @@ const rl = readline.createInterface({
 	output: process.stdout,
 });
 let input = [];
-rl
-	.on('line', function (line) {
-		input = line.split(' ').map((i) => parseInt(i));
-		rl.close();
-	})
-	.on('close', function () {
-		let n = input[0];
-		let k = input[1];
-		console.log(printResult(removePeople(n, k)));
-		process.exit();
-	});
+rl.on('line', function (line) {
+	input = line.split(' ').map((i) => parseInt(i));
+	rl.close();
+}).on('close', function () {
+	let n = input[0];
+	let k = input[1];
+	console.log(printResult(removePeople(n, k)));
+	process.exit();
+});

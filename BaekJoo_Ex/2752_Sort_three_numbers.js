@@ -11,13 +11,11 @@ const rl = readline.createInterface({
 	output: process.stdout,
 });
 let input = [];
-rl
-	.on('line', function (line) {
-		input = line.split(' ').map((i) => parseInt(i));
-		rl.close();
-	})
-	.on('close', function () {
-		let answer = sortNumber(input[0], input[1], input[2]);
-		console.log(answer[0], answer[1], answer[2]);
-		process.exit();
-	});
+rl.on('line', function (line) {
+	input = line.split(' ').map((i) => parseInt(i));
+	rl.close();
+}).on('close', function () {
+	let answer = sortNumber(input[0], input[1], input[2]);
+	console.log(answer[0], answer[1], answer[2]);
+	process.exit();
+});

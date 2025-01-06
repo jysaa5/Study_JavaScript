@@ -7,11 +7,9 @@ const rl = readline.createInterface({
 	output: process.stdout,
 });
 
-rl
-	.on('line', function (line) {
-		console.log('input >>>>', line);
-		rl.close();
-	})
-	.on('close', function () {
-		process.exit();
-	});
+rl.on('line', function (line) {
+	console.log('input >>>>', line);
+	rl.close();
+}).on('close', function () {
+	process.exit();
+});

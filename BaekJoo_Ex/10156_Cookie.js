@@ -7,15 +7,13 @@ const rl = readline.createInterface({
 	output: process.stdout,
 });
 let input = [];
-rl
-	.on('line', function (line) {
-		input = line.split(' ').map((i) => parseInt(i));
-		rl.close();
-	})
-	.on('close', function () {
-		let k = input[0];
-		let n = input[1];
-		let m = input[2];
-		console.log(k * n - m > 0 ? k * n - m : 0);
-		process.exit();
-	});
+rl.on('line', function (line) {
+	input = line.split(' ').map((i) => parseInt(i));
+	rl.close();
+}).on('close', function () {
+	let k = input[0];
+	let n = input[1];
+	let m = input[2];
+	console.log(k * n - m > 0 ? k * n - m : 0);
+	process.exit();
+});

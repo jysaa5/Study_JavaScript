@@ -6,20 +6,18 @@ const rl = readline.createInterface({
 	output: process.stdout,
 });
 let input = [];
-rl
-	.on('line', function (line) {
-		input.push(line);
-	})
-	.on('close', function () {
-		var num = parseInt(input[0]);
-		for (var i = 0; i < num; i++) {
-			let o = 0;
-			let sum = 0;
-			for (var j = 0; j < input[i + 1].length; j++) {
-				input[i + 1][j] === 'O' ? o++ : (o = 0);
-				sum += o;
-			}
-			console.log(sum);
+rl.on('line', function (line) {
+	input.push(line);
+}).on('close', function () {
+	var num = parseInt(input[0]);
+	for (var i = 0; i < num; i++) {
+		let o = 0;
+		let sum = 0;
+		for (var j = 0; j < input[i + 1].length; j++) {
+			input[i + 1][j] === 'O' ? o++ : (o = 0);
+			sum += o;
 		}
-		process.exit();
-	});
+		console.log(sum);
+	}
+	process.exit();
+});

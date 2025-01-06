@@ -16,17 +16,15 @@ const rl = readline.createInterface({
 	output: process.stdout,
 });
 let input = [];
-rl
-	.on('line', function (line) {
-		input.push(line);
-	})
-	.on('close', function () {
-		let t = parseInt(input[0]);
-		for (var i = 0; i < t; i++) {
-			let a = parseInt(input[i + 1].split(' ')[0]);
-			let b = parseInt(input[i + 1].split(' ')[1]);
-			console.log(getCommonAncestor(a, b) * 10);
-		}
+rl.on('line', function (line) {
+	input.push(line);
+}).on('close', function () {
+	let t = parseInt(input[0]);
+	for (var i = 0; i < t; i++) {
+		let a = parseInt(input[i + 1].split(' ')[0]);
+		let b = parseInt(input[i + 1].split(' ')[1]);
+		console.log(getCommonAncestor(a, b) * 10);
+	}
 
-		process.exit();
-	});
+	process.exit();
+});

@@ -39,40 +39,38 @@ const rl = readline.createInterface({
 	output: process.stdout,
 });
 let input = [];
-rl
-	.on('line', function (line) {
-		input.push(line);
-	})
-	.on('close', function () {
-		let n = parseInt(input[0].split(' ')[0]);
-		let m = parseInt(input[0].split(' ')[1]);
-		let matrix = Array.from(
-			{
-				length: n + 1,
-			},
-			() => Array(n + 1).fill(0),
+rl.on('line', function (line) {
+	input.push(line);
+}).on('close', function () {
+	let n = parseInt(input[0].split(' ')[0]);
+	let m = parseInt(input[0].split(' ')[1]);
+	let matrix = Array.from(
+		{
+			length: n + 1,
+		},
+		() => Array(n + 1).fill(0),
+	);
+
+	for (let i = 0; i < m; i++) {
+		let list = input[i + 1].split(' ');
+		for (let j = 0; j < m; j++) {
+			matrix[parseInt(list[0])][parseInt(list[1])] = 1;
+			matrix[parseInt(list[1])][parseInt(list[0])] = 1;
+		}
+	}
+
+	let result = [];
+	for (let k = 0; k < n + 1; k++) {
+		result.push(
+			getLeastKevinBacons(matrix, n, k).reduce((arr, cur) => {
+				return (arr += cur);
+			}, 0),
 		);
+	}
+	result.shift();
+	let min = Math.min(...result);
+	let ret = result.indexOf(min);
 
-		for (let i = 0; i < m; i++) {
-			let list = input[i + 1].split(' ');
-			for (let j = 0; j < m; j++) {
-				matrix[parseInt(list[0])][parseInt(list[1])] = 1;
-				matrix[parseInt(list[1])][parseInt(list[0])] = 1;
-			}
-		}
-
-		let result = [];
-		for (let k = 0; k < n + 1; k++) {
-			result.push(
-				getLeastKevinBacons(matrix, n, k).reduce((arr, cur) => {
-					return (arr += cur);
-				}, 0),
-			);
-		}
-		result.shift();
-		let min = Math.min(...result);
-		let ret = result.indexOf(min);
-
-		console.log(ret + 1);
-		process.exit();
-	});
+	console.log(ret + 1);
+	process.exit();
+});

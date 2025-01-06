@@ -6,19 +6,17 @@ const rl = readline.createInterface({
 	output: process.stdout,
 });
 let input = [];
-rl
-	.on('line', function (line) {
-		input.push(line);
-	})
-	.on('close', function () {
-		let num = parseInt(input[0]);
-		let cars = input[1].split(' ').map((i) => parseInt(i));
-		let result = [];
-		for (let c of cars) {
-			if (c === num) {
-				result.push(c);
-			}
+rl.on('line', function (line) {
+	input.push(line);
+}).on('close', function () {
+	let num = parseInt(input[0]);
+	let cars = input[1].split(' ').map((i) => parseInt(i));
+	let result = [];
+	for (let c of cars) {
+		if (c === num) {
+			result.push(c);
 		}
-		console.log(result.length);
-		process.exit();
-	});
+	}
+	console.log(result.length);
+	process.exit();
+});

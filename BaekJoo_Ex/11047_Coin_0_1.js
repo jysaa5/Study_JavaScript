@@ -17,30 +17,28 @@ const setInputs = () => {
 	coins = input.map((i) => parseInt(i)).reverse();
 };
 
-rl
-	.on('line', function (line) {
-		input.push(line);
-		let numbers = input[0].split(' ').map((i) => parseInt(i));
-		n = numbers[0];
-		k = numbers[1];
-		if (input.length === n + 1) {
-			rl.close();
+rl.on('line', function (line) {
+	input.push(line);
+	let numbers = input[0].split(' ').map((i) => parseInt(i));
+	n = numbers[0];
+	k = numbers[1];
+	if (input.length === n + 1) {
+		rl.close();
+	}
+}).on('close', function () {
+	setInputs();
+
+	for (let coin of coins) {
+		if (k < coin) {
+			continue;
+		} else {
+			let nums = Math.floor(k / coin);
+			k = k - nums * coin;
+			result += nums;
 		}
-	})
-	.on('close', function () {
-		setInputs();
+	}
 
-		for (let coin of coins) {
-			if (k < coin) {
-				continue;
-			} else {
-				let nums = Math.floor(k / coin);
-				k = k - nums * coin;
-				result += nums;
-			}
-		}
+	console.log(result);
 
-		console.log(result);
-
-		process.exit();
-	});
+	process.exit();
+});

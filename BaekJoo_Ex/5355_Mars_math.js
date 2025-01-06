@@ -31,19 +31,17 @@ const rl = readline.createInterface({
 	output: process.stdout,
 });
 let input = [];
-rl
-	.on('line', function (line) {
-		input.push(line);
-	})
-	.on('close', function () {
-		var t = parseInt(input[0]);
-		for (var i = 0; i < t; i++) {
-			var inputLine = input[i + 1].split(' ');
-			var num = Number(inputLine[0]);
-			for (var j = 1; j < inputLine.length; j++) {
-				num = convertOperator(num, inputLine[j]);
-			}
-			console.log(financial(num));
+rl.on('line', function (line) {
+	input.push(line);
+}).on('close', function () {
+	var t = parseInt(input[0]);
+	for (var i = 0; i < t; i++) {
+		var inputLine = input[i + 1].split(' ');
+		var num = Number(inputLine[0]);
+		for (var j = 1; j < inputLine.length; j++) {
+			num = convertOperator(num, inputLine[j]);
 		}
-		process.exit();
-	});
+		console.log(financial(num));
+	}
+	process.exit();
+});

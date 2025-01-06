@@ -16,34 +16,32 @@ const rl = readline.createInterface({
 	output: process.stdout,
 });
 let input = [];
-rl
-	.on('line', function (line) {
-		input.push(parseInt(line));
-		rl.close();
-	})
-	.on('close', function () {
-		let n = input[0];
-		let arr = Array.from(
-			{
-				length: n + 1,
-			},
-			() => 0,
-		);
+rl.on('line', function (line) {
+	input.push(parseInt(line));
+	rl.close();
+}).on('close', function () {
+	let n = input[0];
+	let arr = Array.from(
+		{
+			length: n + 1,
+		},
+		() => 0,
+	);
 
-		for (let i = 1; i < n + 1; i++) {
-			if (i === 1) {
-				arr[i] = 0;
-				continue;
-			}
-			arr[i] = arr[i - 1] + 1;
-			if (i % 3 === 0 && arr[parseInt(i / 3)] + 1 < arr[i]) {
-				arr[i] = arr[parseInt(i / 3)] + 1;
-			}
-			if (i % 2 === 0 && arr[parseInt(i / 2)] + 1 < arr[i]) {
-				arr[i] = arr[parseInt(i / 2)] + 1;
-			}
+	for (let i = 1; i < n + 1; i++) {
+		if (i === 1) {
+			arr[i] = 0;
+			continue;
 		}
-		//console.log(arr)
-		console.log(arr[n]);
-		process.exit();
-	});
+		arr[i] = arr[i - 1] + 1;
+		if (i % 3 === 0 && arr[parseInt(i / 3)] + 1 < arr[i]) {
+			arr[i] = arr[parseInt(i / 3)] + 1;
+		}
+		if (i % 2 === 0 && arr[parseInt(i / 2)] + 1 < arr[i]) {
+			arr[i] = arr[parseInt(i / 2)] + 1;
+		}
+	}
+	//console.log(arr)
+	console.log(arr[n]);
+	process.exit();
+});

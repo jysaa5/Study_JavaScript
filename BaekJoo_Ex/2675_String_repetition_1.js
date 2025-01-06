@@ -7,23 +7,21 @@ const rl = readline.createInterface({
 	output: process.stdout,
 });
 let input = [];
-rl
-	.on('line', function (line) {
-		input.push(line);
-	})
-	.on('close', function () {
-		var t = parseInt(input[0]);
-		for (var i = 0; i < t; i++) {
-			var r = parseInt(input[i + 1].split(' ')[0]);
-			var str = input[i + 1].split(' ')[1];
-			let result = '';
-			for (var j = 0; j < str.length; j++) {
-				var strArray = str.split('')[j];
-				for (var k = 0; k < r; k++) {
-					result += strArray;
-				}
+rl.on('line', function (line) {
+	input.push(line);
+}).on('close', function () {
+	var t = parseInt(input[0]);
+	for (var i = 0; i < t; i++) {
+		var r = parseInt(input[i + 1].split(' ')[0]);
+		var str = input[i + 1].split(' ')[1];
+		let result = '';
+		for (var j = 0; j < str.length; j++) {
+			var strArray = str.split('')[j];
+			for (var k = 0; k < r; k++) {
+				result += strArray;
 			}
-			console.log(result);
 		}
-		process.exit();
-	});
+		console.log(result);
+	}
+	process.exit();
+});

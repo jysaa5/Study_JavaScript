@@ -9,19 +9,17 @@ const rl = readline.createInterface({
 	output: process.stdout,
 });
 let input = [];
-rl
-	.on('line', function (line) {
-		input.push(parseInt(line));
-	})
-	.on('close', function () {
-		let sum = 0;
-		for (var score of input) {
-			if (score < 40) {
-				sum += 40;
-			} else {
-				sum += score;
-			}
+rl.on('line', function (line) {
+	input.push(parseInt(line));
+}).on('close', function () {
+	let sum = 0;
+	for (var score of input) {
+		if (score < 40) {
+			sum += 40;
+		} else {
+			sum += score;
 		}
-		console.log(parseInt(sum / 5));
-		process.exit();
-	});
+	}
+	console.log(parseInt(sum / 5));
+	process.exit();
+});

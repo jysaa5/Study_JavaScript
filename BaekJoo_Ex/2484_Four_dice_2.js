@@ -38,17 +38,15 @@ const rl = readline.createInterface({
 	output: process.stdout,
 });
 let input = [];
-rl
-	.on('line', function (line) {
-		input.push(line);
-	})
-	.on('close', function () {
-		let n = parseInt(input[0]);
-		let result = [];
-		for (var i = 0; i < n; i++) {
-			let dices = input[i + 1].split(' ').map((e) => parseInt(e));
-			result.push(getMoney(dices));
-		}
-		console.log(Math.max(...result));
-		process.exit();
-	});
+rl.on('line', function (line) {
+	input.push(line);
+}).on('close', function () {
+	let n = parseInt(input[0]);
+	let result = [];
+	for (var i = 0; i < n; i++) {
+		let dices = input[i + 1].split(' ').map((e) => parseInt(e));
+		result.push(getMoney(dices));
+	}
+	console.log(Math.max(...result));
+	process.exit();
+});

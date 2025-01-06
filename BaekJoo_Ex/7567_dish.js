@@ -9,27 +9,25 @@ const rl = readline.createInterface({
 	output: process.stdout,
 });
 let input = [];
-rl
-	.on('line', function (line) {
-		input.push(line);
-		rl.close();
-	})
-	.on('close', function () {
-		let dishes = input[0].split('');
-		let stack = [];
-		let result = 10;
-		for (var d of dishes) {
-			if (stack.length === 0) {
-				stack.push(d);
+rl.on('line', function (line) {
+	input.push(line);
+	rl.close();
+}).on('close', function () {
+	let dishes = input[0].split('');
+	let stack = [];
+	let result = 10;
+	for (var d of dishes) {
+		if (stack.length === 0) {
+			stack.push(d);
+		} else {
+			if (stack[stack.length - 1] === d) {
+				result += 5;
 			} else {
-				if (stack[stack.length - 1] === d) {
-					result += 5;
-				} else {
-					result += 10;
-				}
-				stack.push(d);
+				result += 10;
 			}
+			stack.push(d);
 		}
-		console.log(result);
-		process.exit();
-	});
+	}
+	console.log(result);
+	process.exit();
+});

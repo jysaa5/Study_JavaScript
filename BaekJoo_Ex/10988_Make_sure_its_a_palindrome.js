@@ -8,14 +8,12 @@ const rl = readline.createInterface({
 	output: process.stdout,
 });
 let input = [];
-rl
-	.on('line', function (line) {
-		input.push(line);
-		rl.close();
-	})
-	.on('close', function () {
-		let str1 = input[0];
-		let str2 = str1.split('').reverse().join('');
-		str1 === str2 ? console.log(1) : console.log(0);
-		process.exit();
-	});
+rl.on('line', function (line) {
+	input.push(line);
+	rl.close();
+}).on('close', function () {
+	let str1 = input[0];
+	let str2 = str1.split('').reverse().join('');
+	str1 === str2 ? console.log(1) : console.log(0);
+	process.exit();
+});

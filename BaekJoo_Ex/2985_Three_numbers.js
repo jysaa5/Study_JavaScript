@@ -23,28 +23,26 @@ const rl = readline.createInterface({
 	output: process.stdout,
 });
 let input = [];
-rl
-	.on('line', function (line) {
-		input = line.split(' ').map((i) => parseInt(i));
-		rl.close();
-	})
-	.on('close', function () {
-		if (calculateAddition(input[0], input[1], input[2])) {
-			console.log(input[0] + '+' + input[1] + '=' + input[2]);
-		} else if (calculateSubtraction(input[0], input[1], input[2])) {
-			console.log(input[0] + '-' + input[1] + '=' + input[2]);
-		} else if (calculateMultiplication(input[0], input[1], input[2])) {
-			console.log(input[0] + '*' + input[1] + '=' + input[2]);
-		} else if (calculateDivision(input[0], input[1], input[2])) {
-			console.log(input[0] + '/' + input[1] + '=' + input[2]);
-		} else if (calculateAddition(input[1], input[2], input[0])) {
-			console.log(input[0] + '=' + input[1] + '+' + input[2]);
-		} else if (calculateSubtraction(input[1], input[2], input[0])) {
-			console.log(input[0] + '=' + input[1] + '-' + input[2]);
-		} else if (calculateMultiplication(input[1], input[2], input[0])) {
-			console.log(input[0] + '=' + input[1] + '*' + input[2]);
-		} else if (calculateDivision(input[1], input[2], input[0])) {
-			console.log(input[0] + '=' + input[1] + '/' + input[2]);
-		}
-		process.exit();
-	});
+rl.on('line', function (line) {
+	input = line.split(' ').map((i) => parseInt(i));
+	rl.close();
+}).on('close', function () {
+	if (calculateAddition(input[0], input[1], input[2])) {
+		console.log(input[0] + '+' + input[1] + '=' + input[2]);
+	} else if (calculateSubtraction(input[0], input[1], input[2])) {
+		console.log(input[0] + '-' + input[1] + '=' + input[2]);
+	} else if (calculateMultiplication(input[0], input[1], input[2])) {
+		console.log(input[0] + '*' + input[1] + '=' + input[2]);
+	} else if (calculateDivision(input[0], input[1], input[2])) {
+		console.log(input[0] + '/' + input[1] + '=' + input[2]);
+	} else if (calculateAddition(input[1], input[2], input[0])) {
+		console.log(input[0] + '=' + input[1] + '+' + input[2]);
+	} else if (calculateSubtraction(input[1], input[2], input[0])) {
+		console.log(input[0] + '=' + input[1] + '-' + input[2]);
+	} else if (calculateMultiplication(input[1], input[2], input[0])) {
+		console.log(input[0] + '=' + input[1] + '*' + input[2]);
+	} else if (calculateDivision(input[1], input[2], input[0])) {
+		console.log(input[0] + '=' + input[1] + '/' + input[2]);
+	}
+	process.exit();
+});

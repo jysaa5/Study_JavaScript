@@ -72,20 +72,18 @@ const rl = readline.createInterface({
 	output: process.stdout,
 });
 let input = [];
-rl
-	.on('line', function (line) {
-		input.push(line);
-	})
-	.on('close', function () {
-		let n = parseInt(input[0]);
-		let a = parseInt(input[1].split(' ')[0]);
-		let b = parseInt(input[1].split(' ')[1]);
-		let m = parseInt(input[2]);
-		let tree = [];
-		for (var i = 0; i < m; i++) {
-			tree.push(input[3 + i]);
-		}
-		// console.log(makeDegree(n, tree))
-		console.log(calculateDegrees(a, b, makeDegree(n, tree)));
-		process.exit();
-	});
+rl.on('line', function (line) {
+	input.push(line);
+}).on('close', function () {
+	let n = parseInt(input[0]);
+	let a = parseInt(input[1].split(' ')[0]);
+	let b = parseInt(input[1].split(' ')[1]);
+	let m = parseInt(input[2]);
+	let tree = [];
+	for (var i = 0; i < m; i++) {
+		tree.push(input[3 + i]);
+	}
+	// console.log(makeDegree(n, tree))
+	console.log(calculateDegrees(a, b, makeDegree(n, tree)));
+	process.exit();
+});

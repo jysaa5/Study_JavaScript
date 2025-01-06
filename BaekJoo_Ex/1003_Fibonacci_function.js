@@ -26,17 +26,15 @@ const getResults = (count) => {
 	}
 };
 
-rl
-	.on('line', function (line) {
-		if (input.length === 0) {
-			input.push(line);
-		} else if (input.length >= 1) {
-			input.push(line);
-			if (Number(input[0]) === input.length - 1) rl.close();
-		}
-	})
-	.on('close', function () {
-		fibonacci();
-		getResults(Number(input[0]));
-		process.exit();
-	});
+rl.on('line', function (line) {
+	if (input.length === 0) {
+		input.push(line);
+	} else if (input.length >= 1) {
+		input.push(line);
+		if (Number(input[0]) === input.length - 1) rl.close();
+	}
+}).on('close', function () {
+	fibonacci();
+	getResults(Number(input[0]));
+	process.exit();
+});

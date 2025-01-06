@@ -26,23 +26,21 @@ const rl = readline.createInterface({
 	output: process.stdout,
 });
 let input = [];
-rl
-	.on('line', function (line) {
-		input.push(line);
-	})
-	.on('close', function () {
-		let t = parseInt(input[0]);
-		for (let i = 0; i < t * 2; i += 2) {
-			let n = Number(input[i + 1]);
-			let nums = Array.from(
-				{
-					length: n,
-				},
-				() => 0,
-			);
-			nums = input[i + 2].split(' ').map((j) => parseInt(j));
-			// console.log(Math.min(...nums), Math.max(...nums));
-			console.log(getMin(nums), getMax(nums));
-		}
-		process.exit();
-	});
+rl.on('line', function (line) {
+	input.push(line);
+}).on('close', function () {
+	let t = parseInt(input[0]);
+	for (let i = 0; i < t * 2; i += 2) {
+		let n = Number(input[i + 1]);
+		let nums = Array.from(
+			{
+				length: n,
+			},
+			() => 0,
+		);
+		nums = input[i + 2].split(' ').map((j) => parseInt(j));
+		// console.log(Math.min(...nums), Math.max(...nums));
+		console.log(getMin(nums), getMax(nums));
+	}
+	process.exit();
+});

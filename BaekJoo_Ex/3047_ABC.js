@@ -24,14 +24,12 @@ const rl = readline.createInterface({
 	output: process.stdout,
 });
 let input = [];
-rl
-	.on('line', function (line) {
-		input.push(line);
-	})
-	.on('close', function () {
-		let nums = input[0].split(' ').map((i) => parseInt(i));
-		let strABC = input[1];
-		let result = sortABC(nums, strABC);
-		console.log(result[0], result[1], result[2]);
-		process.exit();
-	});
+rl.on('line', function (line) {
+	input.push(line);
+}).on('close', function () {
+	let nums = input[0].split(' ').map((i) => parseInt(i));
+	let strABC = input[1];
+	let result = sortABC(nums, strABC);
+	console.log(result[0], result[1], result[2]);
+	process.exit();
+});

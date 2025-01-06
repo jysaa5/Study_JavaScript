@@ -21,15 +21,13 @@ const rl = readline.createInterface({
 	output: process.stdout,
 });
 let input = [];
-rl
-	.on('line', function (line) {
-		input.push(parseInt(line));
-		rl.close();
-	})
-	.on('close', function () {
-		console.log(2 ** input[0] - 1);
-		if (input[0] <= 20) {
-			hanoi(1, 3, input[0]);
-		}
-		process.exit();
-	});
+rl.on('line', function (line) {
+	input.push(parseInt(line));
+	rl.close();
+}).on('close', function () {
+	console.log(2 ** input[0] - 1);
+	if (input[0] <= 20) {
+		hanoi(1, 3, input[0]);
+	}
+	process.exit();
+});

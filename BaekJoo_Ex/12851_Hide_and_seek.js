@@ -58,15 +58,13 @@ const rl = readline.createInterface({
 	output: process.stdout,
 });
 let input = [];
-rl
-	.on('line', function (line) {
-		input.push(line);
-		rl.close();
-	})
-	.on('close', function () {
-		let n = parseInt(input[0].split(' ')[0]);
-		let k = parseInt(input[0].split(' ')[1]);
-		console.log(bfs(n, k).time[k]);
-		console.log(bfs(n, k).checked[k]);
-		process.exit();
-	});
+rl.on('line', function (line) {
+	input.push(line);
+	rl.close();
+}).on('close', function () {
+	let n = parseInt(input[0].split(' ')[0]);
+	let k = parseInt(input[0].split(' ')[1]);
+	console.log(bfs(n, k).time[k]);
+	console.log(bfs(n, k).checked[k]);
+	process.exit();
+});

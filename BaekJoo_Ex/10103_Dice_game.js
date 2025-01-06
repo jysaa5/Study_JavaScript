@@ -9,26 +9,20 @@ const rl = readline.createInterface({
 	output: process.stdout,
 });
 let input = [];
-rl
-	.on('line', function (line) {
-		input.push(line);
-	})
-	.on('close', function () {
-		var n = parseInt(input[0]);
-		var c = 100;
-		var s = 100;
-		for (var i = 0; i < n; i++) {
-			if (
-				parseInt(input[i + 1].split(' ')[0]) > parseInt(input[i + 1].split(' ')[1])
-			) {
-				s = s - parseInt(input[i + 1].split(' ')[0]);
-			} else if (
-				parseInt(input[i + 1].split(' ')[0]) < parseInt(input[i + 1].split(' ')[1])
-			) {
-				c = c - parseInt(input[i + 1].split(' ')[1]);
-			}
+rl.on('line', function (line) {
+	input.push(line);
+}).on('close', function () {
+	var n = parseInt(input[0]);
+	var c = 100;
+	var s = 100;
+	for (var i = 0; i < n; i++) {
+		if (parseInt(input[i + 1].split(' ')[0]) > parseInt(input[i + 1].split(' ')[1])) {
+			s = s - parseInt(input[i + 1].split(' ')[0]);
+		} else if (parseInt(input[i + 1].split(' ')[0]) < parseInt(input[i + 1].split(' ')[1])) {
+			c = c - parseInt(input[i + 1].split(' ')[1]);
 		}
-		console.log(c);
-		console.log(s);
-		process.exit();
-	});
+	}
+	console.log(c);
+	console.log(s);
+	process.exit();
+});

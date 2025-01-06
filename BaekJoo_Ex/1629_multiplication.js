@@ -19,15 +19,13 @@ const rl = readline.createInterface({
 	output: process.stdout,
 });
 let input = [];
-rl
-	.on('line', function (line) {
-		input.push(line);
-		rl.close();
-	})
-	.on('close', function () {
-		var a = parseInt(input[0].split(' ')[0]);
-		var b = parseInt(input[0].split(' ')[1]);
-		var c = parseInt(input[0].split(' ')[2]);
-		console.log(pow_custom(a, b, c));
-		process.exit();
-	});
+rl.on('line', function (line) {
+	input.push(line);
+	rl.close();
+}).on('close', function () {
+	var a = parseInt(input[0].split(' ')[0]);
+	var b = parseInt(input[0].split(' ')[1]);
+	var c = parseInt(input[0].split(' ')[2]);
+	console.log(pow_custom(a, b, c));
+	process.exit();
+});

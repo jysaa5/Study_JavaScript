@@ -6,12 +6,10 @@ const rl = readline.createInterface({
 	output: process.stdout,
 });
 let input = [];
-rl
-	.on('line', function (line) {
-		input = line.split(' ').map((i) => parseInt(i));
-		rl.close();
-	})
-	.on('close', function () {
-		console.log(2 * input[1] - input[0]);
-		process.exit();
-	});
+rl.on('line', function (line) {
+	input = line.split(' ').map((i) => parseInt(i));
+	rl.close();
+}).on('close', function () {
+	console.log(2 * input[1] - input[0]);
+	process.exit();
+});

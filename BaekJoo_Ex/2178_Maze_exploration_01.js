@@ -44,22 +44,20 @@ const rl = readline.createInterface({
 	output: process.stdout,
 });
 let input = [];
-rl
-	.on('line', function (line) {
-		input.push(line);
-	})
-	.on('close', function () {
-		let n = parseInt(input[0].split(' ')[0]);
-		let m = parseInt(input[0].split(' ')[1]);
-		graph = Array.from(Array(n), () => Array(m).fill(0));
-		check = Array.from(Array(n), () => Array(m).fill(0));
-		for (let i = 0; i < n; i++) {
-			for (let j = 0; j < m; j++) {
-				graph[i][j] = input[i + 1].split('').map((m) => parseInt(m))[j];
-			}
+rl.on('line', function (line) {
+	input.push(line);
+}).on('close', function () {
+	let n = parseInt(input[0].split(' ')[0]);
+	let m = parseInt(input[0].split(' ')[1]);
+	graph = Array.from(Array(n), () => Array(m).fill(0));
+	check = Array.from(Array(n), () => Array(m).fill(0));
+	for (let i = 0; i < n; i++) {
+		for (let j = 0; j < m; j++) {
+			graph[i][j] = input[i + 1].split('').map((m) => parseInt(m))[j];
 		}
-		bfs(0, 0);
-		//console.log(check)
-		console.log(check[n - 1][m - 1]);
-		process.exit();
-	});
+	}
+	bfs(0, 0);
+	//console.log(check)
+	console.log(check[n - 1][m - 1]);
+	process.exit();
+});

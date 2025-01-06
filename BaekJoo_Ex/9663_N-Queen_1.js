@@ -28,14 +28,12 @@ const dfs = (row) => {
 	}
 };
 
-rl
-	.on('line', function (line) {
-		input.push(line);
-		n = Number(input[0]);
-		rl.close();
-	})
-	.on('close', function () {
-		dfs(0);
-		console.log(cnt);
-		process.exit();
-	});
+rl.on('line', function (line) {
+	input.push(line);
+	n = Number(input[0]);
+	rl.close();
+}).on('close', function () {
+	dfs(0);
+	console.log(cnt);
+	process.exit();
+});

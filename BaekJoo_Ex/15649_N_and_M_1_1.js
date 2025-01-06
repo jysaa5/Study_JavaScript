@@ -36,18 +36,16 @@ const dfs = (arr, depth) => {
 	}
 };
 
-rl
-	.on('line', function (line) {
-		input.push(line);
-		n = Number(input[0].split(' ')[0]);
-		m = Number(input[0].split(' ')[1]);
-		numbers = Array.from({ length: n }, (_, i) => i + 1);
-		visited = new Array(n).fill(false);
+rl.on('line', function (line) {
+	input.push(line);
+	n = Number(input[0].split(' ')[0]);
+	m = Number(input[0].split(' ')[1]);
+	numbers = Array.from({ length: n }, (_, i) => i + 1);
+	visited = new Array(n).fill(false);
 
-		rl.close();
-	})
-	.on('close', function () {
-		dfs(numbers, 0);
-		console.log(answer);
-		process.exit();
-	});
+	rl.close();
+}).on('close', function () {
+	dfs(numbers, 0);
+	console.log(answer);
+	process.exit();
+});

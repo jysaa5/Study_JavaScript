@@ -113,14 +113,12 @@ const rl = readline.createInterface({
 	output: process.stdout,
 });
 let input = [];
-rl
-	.on('line', function (line) {
-		input.push(line);
-		rl.close();
-	})
-	.on('close', function () {
-		let num = parseInt(input[0].split(' ')[0]);
-		let name = input[0].split(' ')[1];
-		convertName(num, name);
-		process.exit();
-	});
+rl.on('line', function (line) {
+	input.push(line);
+	rl.close();
+}).on('close', function () {
+	let num = parseInt(input[0].split(' ')[0]);
+	let name = input[0].split(' ')[1];
+	convertName(num, name);
+	process.exit();
+});

@@ -6,14 +6,12 @@ const rl = readline.createInterface({
 	output: process.stdout,
 });
 let input = [];
-rl
-	.on('line', function (line) {
-		input.push(parseInt(line));
-	})
-	.on('close', function () {
-		console.log(input[0] * parseInt(String(input[1]).split('')[2]));
-		console.log(input[0] * parseInt(String(input[1]).split('')[1]));
-		console.log(input[0] * parseInt(String(input[1]).split('')[0]));
-		console.log(input[0] * input[1]);
-		process.exit();
-	});
+rl.on('line', function (line) {
+	input.push(parseInt(line));
+}).on('close', function () {
+	console.log(input[0] * parseInt(String(input[1]).split('')[2]));
+	console.log(input[0] * parseInt(String(input[1]).split('')[1]));
+	console.log(input[0] * parseInt(String(input[1]).split('')[0]));
+	console.log(input[0] * input[1]);
+	process.exit();
+});

@@ -30,16 +30,14 @@ const rl = readline.createInterface({
 	output: process.stdout,
 });
 let input = [];
-rl
-	.on('line', function (line) {
-		input.push(line);
-	})
-	.on('close', function () {
-		let n = parseInt(input[0]);
-		let result = 0;
-		for (var i = 0; i < n; i++) {
-			checkGoodWord(input[i + 1]) === true ? result++ : null;
-		}
-		console.log(result);
-		process.exit();
-	});
+rl.on('line', function (line) {
+	input.push(line);
+}).on('close', function () {
+	let n = parseInt(input[0]);
+	let result = 0;
+	for (var i = 0; i < n; i++) {
+		checkGoodWord(input[i + 1]) === true ? result++ : null;
+	}
+	console.log(result);
+	process.exit();
+});

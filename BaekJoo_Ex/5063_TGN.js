@@ -20,18 +20,16 @@ const rl = readline.createInterface({
 	output: process.stdout,
 });
 let input = [];
-rl
-	.on('line', function (line) {
-		input.push(line);
-	})
-	.on('close', function () {
-		let n = parseInt(input[0]);
-		for (var i = 0; i < n; i++) {
-			let nums = input[i + 1].split(' ').map((i) => parseInt(i));
-			var r = nums[0];
-			var e = nums[1];
-			var c = nums[2];
-			printMessage(e - c - r);
-		}
-		process.exit();
-	});
+rl.on('line', function (line) {
+	input.push(line);
+}).on('close', function () {
+	let n = parseInt(input[0]);
+	for (var i = 0; i < n; i++) {
+		let nums = input[i + 1].split(' ').map((i) => parseInt(i));
+		var r = nums[0];
+		var e = nums[1];
+		var c = nums[2];
+		printMessage(e - c - r);
+	}
+	process.exit();
+});

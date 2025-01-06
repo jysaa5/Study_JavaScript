@@ -5,15 +5,13 @@ const rl = readline.createInterface({
 	output: process.stdout,
 });
 let input = [];
-rl
-	.on('line', function (line) {
-		input = line.split(' ').map((i) => parseInt(i));
-		rl.close();
-	})
-	.on('close', function () {
-		var max = Math.max(...input);
-		input.splice(input.indexOf(max), 1);
-		max = Math.max(...input);
-		console.log(max);
-		process.exit();
-	});
+rl.on('line', function (line) {
+	input = line.split(' ').map((i) => parseInt(i));
+	rl.close();
+}).on('close', function () {
+	var max = Math.max(...input);
+	input.splice(input.indexOf(max), 1);
+	max = Math.max(...input);
+	console.log(max);
+	process.exit();
+});
