@@ -1,8 +1,8 @@
 // 1654: 랜선 자르기
-const readline = require("readline");
+const readline = require('readline');
 const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout,
+	input: process.stdin,
+	output: process.stdout,
 });
 
 let input = [];
@@ -15,36 +15,38 @@ let mid = 0;
 let end = 0;
 let result = 0;
 
-rl.on('line', function (line) {
-    input.push(line);
-    k = Number(input[0].split(' ')[0]);
-    if (input.length === k+1) {
-        rl.close();
-    }
-}).on("close", function () {
-    n = Number(input[0].split(" ")[1]);
-    input.shift();
-    lengths = input.map(Number).sort((a, b) => a - b);
-    
-    start = 0;
-    end = lengths[k - 1];
+rl
+	.on('line', function (line) {
+		input.push(line);
+		k = Number(input[0].split(' ')[0]);
+		if (input.length === k + 1) {
+			rl.close();
+		}
+	})
+	.on('close', function () {
+		n = Number(input[0].split(' ')[1]);
+		input.shift();
+		lengths = input.map(Number).sort((a, b) => a - b);
 
-    while (start <= end) {
-        mid = Math.floor((start + end) / 2);
-        let count = 0;
+		start = 0;
+		end = lengths[k - 1];
 
-        for (let cable of lengths) {
-            count += Math.floor(cable / mid);
-        }
+		while (start <= end) {
+			mid = Math.floor((start + end) / 2);
+			let count = 0;
 
-        if (count >= n) {
-            start = mid + 1;
-            result = mid;
-        } else {
-            end = mid - 1;
-        }
-    }
+			for (let cable of lengths) {
+				count += Math.floor(cable / mid);
+			}
 
-    console.log(result);
-    process.exit();
-})
+			if (count >= n) {
+				start = mid + 1;
+				result = mid;
+			} else {
+				end = mid - 1;
+			}
+		}
+
+		console.log(result);
+		process.exit();
+	});

@@ -6,5 +6,5 @@ let today = new Date();
 let year = today.getFullYear();
 let month = today.getMonth() + 1;
 let date = today.getDate();
-month = month.length > 1 ? month : 0 + String(month)
-console.log(`${year}-${month}-${date}`)
+month = month.length > 1 ? month : 0 + String(month);
+console.log(`${year}-${month}-${date}`);

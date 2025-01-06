@@ -5,30 +5,31 @@
 // 파이썬과 동일하게 풀었는 데, 오답 처리됨.
 
 function hanoi(st, ed, sz) {
-    if (sz === 1) {
-        console.log(st, ed)
-        return
-    }
-    hanoi(st, 6 - st - ed, sz - 1)
-    console.log(st, ed)
-    hanoi(6 - st - ed, ed, sz - 1)
+	if (sz === 1) {
+		console.log(st, ed);
+		return;
+	}
+	hanoi(st, 6 - st - ed, sz - 1);
+	console.log(st, ed);
+	hanoi(6 - st - ed, ed, sz - 1);
 }
 
-
 // main 입출력
-const readline = require("readline");
+const readline = require('readline');
 const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout
+	input: process.stdin,
+	output: process.stdout,
 });
-let input = []
-rl.on("line", function (line) {
-    input.push(parseInt(line))
-    rl.close();
-}).on("close", function () {
-    console.log((2 ** input[0]) - 1)
-    if (input[0] <= 20) {
-        hanoi(1, 3, input[0])
-    }
-    process.exit();
-});
+let input = [];
+rl
+	.on('line', function (line) {
+		input.push(parseInt(line));
+		rl.close();
+	})
+	.on('close', function () {
+		console.log(2 ** input[0] - 1);
+		if (input[0] <= 20) {
+			hanoi(1, 3, input[0]);
+		}
+		process.exit();
+	});
