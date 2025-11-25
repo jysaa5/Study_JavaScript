@@ -1,4 +1,4 @@
-// 1012: 유기농 배추
+// 1012: 유기농 배추 (DFS)
 
 const readline = require('readline');
 const rl = readline.createInterface({
