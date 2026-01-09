@@ -59,9 +59,7 @@ rl.on('line', (line) => {
 				}
 			}
 		}
-
 		answers.push(String(wormCount));
 	}
-
 	console.log(answers.join('\n'));
 });
