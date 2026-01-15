@@ -1,7 +1,6 @@
 // 방문 길이
 
 function solution(dirs) {
-  let answer = 0;
   const way = new Map();
 
   const getPoint = (point, d) => {
